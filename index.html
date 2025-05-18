@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELVADA</title>
-    <link rel="stylesheet" href="style.css">
      <audio autoplay loop style="display: none;">
         <source src="muzik.mp3" type="audio/mpeg">
         Tarayıcınız ses öğesini desteklemiyor.
     </audio>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELVADA</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+        <div class="start-button" onclick="startSite()">Siteye Gir</div>
           <audio autoplay loop style="display: none;">
         <source src="muzik.mp3" type="audio/mpeg">
         Tarayıcınız ses öğesini desteklemiyor.
@@ -84,6 +85,15 @@ Hâlâ onu bekliyordu.</p>
     </div>
 
   <a href="hikayem.html" class="btn">MAYIS AYI ve MUTSUZ SON...</a>
+
+
+<script>
+    function startSite() {
+      document.querySelector('.start-button').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+      document.getElementById('myAudio').play();
+    }
+  </script>
 
 </body>
 </html>
