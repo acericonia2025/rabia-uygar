@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div class="start-button" onclick="startSite()">Siteye Gir</div>
-          <audio autoplay loop style="display: none;">
+         <div class="start-button" onclick="startSite()">Siteye Gir</div>
+    <audio id="myAudio" loop style="display: none;">
         <source src="muzik.mp3" type="audio/mpeg">
         Tarayıcınız ses öğesini desteklemiyor.
     </audio>
@@ -85,10 +85,20 @@ Hâlâ onu bekliyordu.</p>
 
 <script>
     function startSite() {
-      document.querySelector('.start-button').style.display = 'none';
-      document.getElementById('mainContent').style.display = 'block';
-      document.getElementById('myAudio').play();
-    }
+            document.querySelector('.start-button').style.display = 'none';
+            document.querySelector('.container').style.display = 'block';
+            var audio = document.getElementById('myAudio');
+            audio.play().catch(e => {
+                console.log("Ses çalınamadı: ", e);
+                // Kullanıcıya bir uyarı gösterebilirsiniz
+                alert("Lütfen tarayıcınızın ses çalma iznini verin.");
+            });
+        }
+        
+        // Sayfa yüklendiğinde container'ı gizle
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.container').style.display = 'none';
+        });
   </script>
 
 </body>
